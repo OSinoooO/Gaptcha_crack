@@ -29,6 +29,8 @@ def image_grayscale_deal(image):
     :return: 转灰度处理后的图片文件
     """
     image = image.convert('L')
+	#取消注释后可以看到处理后的图片效果
+    #image.show()
     return image
 
 def image_thresholding_method(image):
@@ -47,6 +49,8 @@ def image_thresholding_method(image):
             table.append(1)
     # 图片二值化，此处第二个参数为数字一
     image = image.point(table, '1')
+	#取消注释后可以看到处理后的图片效果
+    #image.show()
     return image
 
 
@@ -56,7 +60,6 @@ def captcha_tesserocr_crack(image):
     :param image: 二值化处理后的图片文件
     :return: 识别结果
     """
-    image.show()
     result = tesserocr.image_to_text(image)
     return result
 
